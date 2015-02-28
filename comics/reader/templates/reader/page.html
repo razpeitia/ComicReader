@@ -1,0 +1,15 @@
+{% extends 'reader/base.html' %}
+
+{% block content %}
+  <div class="row">
+    <h3><a href="{% url 'reader:comic_detail' page.issue.comic.slug %}">#{{ page.issue.number }} - {{ page.issue.title }}</a></h3>
+  </div>
+  <div class="row">
+    <div class="col-md-1"><a href="{{ page.before }}">Before</a></div>
+    <div class="col-md-offset-10 col-md-1"><a href="{{ page.next }}">Next</a></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12"><img src="{{ page.image.url }}" /></div>
+  </div>
+
+{% endblock content %}

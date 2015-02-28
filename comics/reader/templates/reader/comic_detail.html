@@ -1,0 +1,15 @@
+{% extends 'reader/base.html' %}
+
+{% block content %}
+  <h3>Issues</h3>
+  <div class="small col-md-offset-11">
+    <a href="{% url 'reader:comic_list' %}">Back to comics</a>
+  </div>
+  {% for issue in comic.issue_set.all %}
+    <div class="row">
+      <div class="col-md-12">
+        <a href="{% url 'reader:page' issue.comic.slug issue.number 1 %}">{{ issue.number }} - {{ issue.title }}</a>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock content %}

@@ -17,7 +17,7 @@ Instalar las librerías necesarias `pip install -r requirements.txt`. Algunas li
 
 Configurar las variables de entorno especificadas en `conf/env_var.sh`
 
-  * `DATABASE_URL` puedes ver el [url schema aquí](https://github.com/kennethreitz/dj-database-ur#url-schema)
+  * `DATABASE_URL` puedes ver el [url schema aquí](https://github.com/kennethreitz/dj-database-url#url-schema)
   * `SECRET_KEY` una llave aleatoria
 
 Una vez instalado todo puedes correr el servidor web con el comando

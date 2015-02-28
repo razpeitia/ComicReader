@@ -1,0 +1,13 @@
+{% extends 'reader/base.html' %}
+
+{% block content %}
+  {% for comic in comic_list %}
+    <div class="row">
+      <h3><a href="{% url 'reader:comic_detail' comic.slug %}">{{ comic.name }}</a></h3>
+      <p>{{ comic.description }}</p>
+      <div class="col-md-5">
+        <a href="{% url 'reader:comic_detail' comic.slug %}"><img src="{% if comic.cover %}{{ comic.cover.url }}{% else %}http://placehold.it/350x150{% endif %}"/></a>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock content %}

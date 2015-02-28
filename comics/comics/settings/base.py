@@ -89,4 +89,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL  = '/media/'
+STATIC_ROOT = get_env_variable("STATIC_ROOT")
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = get_env_variable("MEDIA_ROOT")
+
+
+LOGIN_URL = 'reader:login'
+LOGIN_REDIRECT_URL = 'reader:comic_list'
+LOGOUT_URL = 'reader:login'
