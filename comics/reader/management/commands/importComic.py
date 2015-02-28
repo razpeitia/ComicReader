@@ -28,7 +28,7 @@ class Command(BaseCommand):
 
             comic_file = data['comic_file']
             with zipfile.ZipFile(comic_file, "r") as f:
-                pages = sorted([name for name in f.namelist() if not name.startswith('/')])
+                pages = sorted([name for name in f.namelist() if not name.endswith('/')])
                 for number, name in enumerate(pages, start=1):
                     data = f.read(name)
                     page = Page(issue=issue, page_number=number)
